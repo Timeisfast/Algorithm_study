@@ -17,13 +17,10 @@ def solve():
             return True
         return False
     
+    cnt = N
     for i in range(0, 2 * M, 2):
-        union(arr[i], arr[i + 1])
-    
-    cnt = 0
-    for i in range(1, N + 1):
-        if parent[i] == i:
-            cnt += 1
+        if union(arr[i], arr[i + 1]):
+            cnt -= 1
     return cnt
 
 
